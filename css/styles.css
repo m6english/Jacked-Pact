@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+.main,
+.card {
+    width: 85%;
+    margin: auto;
+}
+
+.jp {
+    text-align: center;
+}
+
+.card {
+    margin-top: 10%;
+    padding: 1rem;
+}
+
+.form-select,
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    width: 50%;
+    margin-left: 25%;
+}
+
+#btn-additional {
+    display: none;
+}
