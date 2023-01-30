@@ -8,7 +8,9 @@ const btnAdditional = document.getElementById('btn-additional');
 const chartGroup = document.getElementById('chart-group');
 const chartEx = document.getElementById('chart-ex');
 const chartMember = document.getElementById('chart-member');
-
+const memberArr = [
+    "Ben", "Clark", "Matt", "Mike", "Zach"
+];
 btnSubmit.addEventListener('click', () => {
     chartGroup.innerHTML = group.value;
     chartEx.innerHTML = `${sets.value} x ${reps.value} - ${exercise.value}`;
