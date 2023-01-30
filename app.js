@@ -15,20 +15,31 @@ function clearValue() {
     exercise.value = '';
 }
 
+function formChange() {
+    member.style.display = 'none';
+    group.style.display = 'none';
+    btnSubmit.style.display = 'none';   
+    btnAdditional.style.display = 'block';
+}
+
 btnSubmit.addEventListener('click', () => {
     for ( let i = 0; i < chartMember.length; i++ ) {
-        if ( chartMember[i].textContent === member.value ) {
+        if ( chartMember[i].textContent === member.value && group.value !== "Group" ) {
             chartGroup[i].innerHTML = group.value;
             chartEx[i].innerHTML = `${sets.value} x ${reps.value} - ${exercise.value}`;
-            member.style.display = 'none';
-            group.style.display = 'none';
-            btnSubmit.style.display = 'none';   
-            btnAdditional.style.display = 'block';
+            formChange();
             clearValue();
-            btnAdditional.addEventListener('click', () => {
-                chartEx[i].innerHTML += `<br>${sets.value} x ${reps.value} - ${exercise.value}`;
-                clearValue();
-            })
+            // btnAdditional.addEventListener('click', () => {
+            //     chartEx[i].innerHTML += `<br>${sets.value} x ${reps.value} - ${exercise.value}`;
+            //     clearValue();
+            // })
         }
     }
 });
+
+btnAdditional.addEventListener('click', () => {
+    
+    chartEx[i].innerHTML += `<br>${sets.value} x ${reps.value} - ${exercise.value}`;
+    clearValue(); 
+
+})
